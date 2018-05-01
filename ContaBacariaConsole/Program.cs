@@ -32,9 +32,18 @@ namespace ContaBacariaConsole
             //Depósito:
             Console.WriteLine();
             Console.Write("Digite um valor para depósito: ");
-            double valor = double.Parse(Console.ReadLine());
+            double valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             conta.Deposito(valor);
-            Console.WriteLine("Conta criada com sucesso:");
+            Console.WriteLine("Conta atualizada:");
+            Console.WriteLine(conta);
+
+
+            //Saque (taxa de R$ 3,00 por saque):
+            Console.WriteLine();
+            Console.Write("Digite um valor para saque: ");
+            valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            conta.Saque(valor);
+            Console.WriteLine("Conta atualizada:");
             Console.WriteLine(conta);
 
             Console.ReadLine();

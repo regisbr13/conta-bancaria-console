@@ -41,5 +41,10 @@ namespace ContaBacariaConsole
         {
             Saldo += valor;
         }
+
+        public void Saque(double valor)
+        {
+            Saldo -= valor + 3.0;
+        }
     }
 }
