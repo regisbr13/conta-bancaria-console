@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace ContaBacariaConsole
 {
@@ -19,11 +20,20 @@ namespace ContaBacariaConsole
             if (conta.HaveraDeposito(resposta))
             {
                 Console.Write("Digite o valor do depósito inicial: ");
-                double saldo = double.Parse(Console.ReadLine());
+                double saldo = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                 conta = new Conta(numero, titular, saldo);
             }
 
             //Mostrar conta:
+            Console.WriteLine();
+            Console.WriteLine("Conta criada com sucesso:");
+            Console.WriteLine(conta);
+
+            //Depósito:
+            Console.WriteLine();
+            Console.Write("Digite um valor para depósito: ");
+            double valor = double.Parse(Console.ReadLine());
+            conta.Deposito(valor);
             Console.WriteLine("Conta criada com sucesso:");
             Console.WriteLine(conta);
 
